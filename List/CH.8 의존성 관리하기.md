@@ -156,7 +156,8 @@ public class Movie {
 }
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cab60956-8596-4773-9040-c8493a8b475c/Untitled.png)
+<img width="701" alt="image" src="https://github.com/HJC96/Obejct/assets/87226129/3195a52f-df73-4637-8091-e4aba5d253de">
+
 
 **해결 방법**
 
