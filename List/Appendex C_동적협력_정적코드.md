@@ -23,23 +23,26 @@
 
 정적 모델을 미리 결정하고 객체의 행동을 정적 모델에 맞추면 안된다. 
 
-객체가 외부에 제공하는 행동을 제외한 채 개념 사이의 관계에 기반해 두 객체의 정적 모델을 구상한다면 다음 그림과 같이 Penguin이 Bird의 자식 클래스로 구현할 것이다. 
+객체가 외부에 제공하는 행동을 제외한 채 개념 사이의 관계에 기반해 두 객체의 정적 모델을 구상한다면 다음 그림과 같이 Penguin이 Bird의 자식 클래스로 구현할 것이다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ef47f4c5-b072-49ff-bb48-2c95687b3f10/Untitled.png)
+<img width="317" alt="Untitled" src="https://github.com/HJC96/Obejct/assets/87226129/12d08778-76e4-4d02-97c5-3db94c2a50d0">
 
 하지만 fly라는 행동을 제공한다면 정적 모델의 구조는 다음과 같이 변경된다. 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5ce4dda0-d01f-4861-ab50-99b0a726b71b/Untitled.png)
+<img width="317" alt="Untitled 1" src="https://github.com/HJC96/Obejct/assets/87226129/012e9ae6-9eea-46a1-9524-0967adbfa40c">
+
 
 ### 변경을 고려하라
 
 핸드폰 과금 시스템의 초기 모델을 통해 변경을 고려하지 않고 정적 모델을 작성하면, 유지 보수하기 어려운 코드가 만들어지는 문제 보기
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9c9e251d-ab84-42e6-8f45-689423b6e686/Untitled.png)
+<img width="929" alt="Untitled 2" src="https://github.com/HJC96/Obejct/assets/87226129/fbb32b6a-ff3d-4c9a-b3ed-fe43038708ab">
+
 
 초기 모델은 상속 계층에 속한 객체들이 협력 안에서 다양한 정책에 따라 요금을 계산하는 책임을 수행해야 한다는 객체의 행동을 잘 표현한다. 하지만 변경이라는 측면에서는 좋은 설계가 아니다. 이 설계는 다양한 정책을 조합하면 조합할수록 중복코드가 기하 급수적으로 증가한다. 게다가 유연하지도 않다. 요금정책을 변경하려면 인스턴스들 사이에 상태를 복사해야 하기 때문이다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/307202ee-975c-40e6-be50-10afaef2b2ed/Untitled.png)
+<img width="995" alt="Untitled 3" src="https://github.com/HJC96/Obejct/assets/87226129/028b5c19-a7b9-4fff-9506-90c577776568">
+
 
 상속을 합성 계층으로 변경하여 요금 정책을 다양하게 조합하더라도 중복 코드가 발생하지 않게 하였고 요금 정책을 변경하고 싶다면 RatePolicy 인스턴스의 종류를 변경하기만 하며 된다. 
 
@@ -62,7 +65,8 @@
     - 모든 몬스터가 공격할 수 있다는 요구사항을 수용할 수 있다.
     - 계층에 속하는 모든 클래스들이 서브타입 관계를 만족하도록 구현할 수 있다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/817b64e8-3f1d-449e-85ab-f7dee4f5c09b/Untitled.png)
+<img width="765" alt="Untitled 4" src="https://github.com/HJC96/Obejct/assets/87226129/a302f986-0e68-4c7c-a7c4-ffc929366f94">
+
 
 ```java
 public abstract class Monster {
@@ -163,7 +167,8 @@ Monster troll = new Monster(new Breed("트롤", 48, "트롤은 곤봉으로 때�
 1. 시스템 안의 모든 몬스터가 수행해야 하는 **행동을 정의한 Monster 클래스**
 2. 몬스터의 **타입을 정의하는 Breed 클래스**
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cdffbd31-8c12-4351-8aec-769766f7267d/Untitled.png)
+<img width="786" alt="Untitled 5" src="https://github.com/HJC96/Obejct/assets/87226129/682d1fc8-3ef8-43c2-850c-116289484995">
+
 
 이것은 상속 대신 합성을 사용하라는 설계 지침을 따르는 예이다. 여기서 합성을 사용한 이유는 Dragon이나 Troll 같은 새로운 Monster 타입이 추가될 때마다 새로운 클래스를 추가하고 싶지 않기 때문이다!
 
@@ -193,7 +198,8 @@ Monster troll = new Monster(new Breed("트롤", 48, "트롤은 곤봉으로 때�
 
 또 다른 예… 핸드폰 과금 시스템의 기본 정책과 부가 정책!!
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/79308f0f-6f42-4e54-8b6f-1cce583bee5f/Untitled.png)
+<img width="718" alt="Untitled 6" src="https://github.com/HJC96/Obejct/assets/87226129/6f8581ce-5aae-4c40-b431-a94b07df4fc0">
+
 
 위 그림은 개념들의 분류 체계를 표현한 것이 아니라 요금제를 구성하는 각 요소들이 실제로 요금을 계산할 때 어떤 순서로 처리돼야 하는지를 표현한 것이다.
 
