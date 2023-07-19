@@ -411,27 +411,16 @@ public class InstrumentedHashSet<E> implements Set<E> {
     위에 코드를 활용해서 기본 정책과 부가 정책 합성하기
     
     ```java
-    Phone phone = new Phone(
-    												new TaxablePolicy(0.05,
-    													new RegularPolicy(...));
+    Phone phone = new Phone( new TaxablePolicy(0.05, new RegularPolicy(...));
     
     일반 요금제에 기본 요금 할인 정책을 조합
-    Phone phone = new Phone(
-    												new TaxablePolicy(0.05,
-    													new RateDiscountablePolicy(Money.wons(1000),
-    														new RegularPolicy(...));
+    Phone phone = new Phone( new TaxablePolicy(0.05, new RateDiscountablePolicy(Money.wons(1000), new RegularPolicy(...));
     
     세금 정책과 기본 요금 할인 정책 적용 순서 바꾸기
-    Phone phone = new Phone(
-    										new RateDiscountablePolicy(Money.wons(1000),
-    												new TaxablePolicy(0.05,			
-    														new RegularPolicy(...));
+    Phone phone = new Phone( new RateDiscountablePolicy(Money.wons(1000), new TaxablePolicy(0.05, new RegularPolicy(...));
     
     동일한 정책을 심야 할인 요금제에?
-    Phone phone = new Phone(
-    										new RateDiscountablePolicy(Money.wons(1000),
-    												new TaxablePolicy(0.05,			
-    														new NightlyDiscountPolicy (...));
+    Phone phone = new Phone( new RateDiscountablePolicy(Money.wons(1000), new TaxablePolicy(0.05, new NightlyDiscountPolicy (...));
     
     ```
     
@@ -470,21 +459,17 @@ abstract class BasicRatePolicy{
 **일반 요금제**
 
 ```java
-class RegularPolicy(val amount:Money, val seconds:Duration)
-										extends BasicRatePolicy{
-
-	override protected def calculateCallFee(call: Call):Money = amount*(call.duration.getSeconds/seconds.getSeconds) 
-	
-}
+class RegularPolicy(val amount:Money, val seconds:Duration) extends BasicRatePolicy{
+override protected def calculateCallFee(call: Call):Money = amount*(call.duration.getSeconds/seconds.getSeconds) }
 ```
 
 **심야 할인 요금제**
 
 ```java
 class NightlyDiscoutPolicy(
-									val nightlyAmount:Money, 
-									val regularAmount:Money, 
-									val seconds:Duration) extends BasicRatePolicy{
+	val nightlyAmount:Money, 
+	val regularAmount:Money, 
+	val seconds:Duration) extends BasicRatePolicy{
 
 	override protected def calculateCallFee(call: Call) : Money = 
 	if(call.from.getHour>=22)
