@@ -1,6 +1,13 @@
-# Obejct
-&lt;오브젝트>를 스터디하며, 공부한 내용을 정리한 것입니다.
+# 오브젝트
+<img width="330" alt="image" src="https://github.com/HJC96/Obejct/assets/87226129/c46075cb-f871-49b5-8be2-ca7a605b5f00">
 
+
+## 스터디 목적
+객체지향 프로그래밍에 대한 깊이 있는 이해를하고자, "오브젝트"를 스터디를 진행하였습니다.
+
+하기 항목들은 공부한 내용을 정리한 것입니다.
+
+---
 1. [객체, 설계](https://github.com/HJC96/Obejct/blob/main/List/CH.1%20%EA%B0%9D%EC%B2%B4%2C%20%EC%84%A4%EA%B3%84.md)
 2. [객체지향 프로그래밍](https://github.com/HJC96/Obejct/blob/main/List/CH.2%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.md)
 3. [역할, 책임, 협력](https://github.com/HJC96/Obejct/blob/main/List/CH.3%20%EC%97%AD%ED%95%A0%2C%20%EC%B1%85%EC%9E%84%2C%20%ED%98%91%EB%A0%A5.md)
