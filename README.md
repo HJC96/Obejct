@@ -1,6 +1,7 @@
 # 오브젝트
 <img width="330" alt="image" src="https://github.com/HJC96/Obejct/assets/87226129/c46075cb-f871-49b5-8be2-ca7a605b5f00">
-
+2025-05-20 인프런 강의 추가 수강 
+https://www.inflearn.com/course/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B8%B0%EC%B4%88%ED%8E%B8-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/dashboard
 
 ## 스터디 목적
 임베디드 C를 주력으로 사용하던 저에게, C++을 이용하여 시스템을 유지보수할 기회가 생겼습니다. 이 기회를 통해, 단순히 새로운 언어를 습득하는 것이 아니라 객체지향의 핵심 원칙과 그것이 소프트웨어에 어떻게 영향을 미치는지 공부하고 싶어 스터디 하게 되었습니다.
